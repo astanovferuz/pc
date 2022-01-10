@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, FlatList } from 'react-native';
+import { DrawerActions } from '@react-navigation/native';
 
 import colors from '../constants/colors';
 import { ListItem, ListSeparator } from '../components/List';
@@ -14,20 +15,20 @@ const styles = StyleSheet.create({
 
 const screens = [
   {
-    title: 'Text',
-    subtitle: 'An example of using the Text.js components.',
-    target: 'TextDemo',
+    title: 'All Properties',
+    subtitle: 'Click here to see all properties',
+    target: 'All Properties',
   },
-  {
-    title: 'Form',
-    subtitle: 'An example of using the Form.js components.',
-    target: 'FormDemo',
-  },
-  {
-    title: 'Button',
-    subtitle: 'An example of using the Button.js components.',
-    target: 'ButtonDemo',
-  },
+  // {
+  //   title: 'Add new property',
+  //   subtitle: 'Click here to add a new property',
+  //   target: 'Add new property',
+  // },
+  // {
+  //   title: 'Button',
+  //   subtitle: 'An example of using the Button.js components.',
+  //   target: 'ButtonDemo',
+  // },
 ];
 
 export const List = ({ navigation }) => {
@@ -40,7 +41,7 @@ export const List = ({ navigation }) => {
         <ListItem
           title={item.title}
           subtitle={item.subtitle}
-          onPress={() => navigation.push(item.target)}
+          onPress={() => navigation.dispatch(DrawerActions.jumpTo(item.title, {name: item.target}))}
         />
       )}
       ItemSeparatorComponent={ListSeparator}

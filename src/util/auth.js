@@ -1,10 +1,13 @@
 import React from 'react';
 import { Alert } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
 export const useLogin = () => {
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
   const [errors, setErrors] = React.useState({});
+
+  const navigation = useNavigation();
 
   const submit = () => {
     const nextErrors = {};
@@ -16,12 +19,9 @@ export const useLogin = () => {
     }
     setErrors(nextErrors);
 
-    if (Object.keys(nextErrors).length > 0) {
-      return null;
+    if (Object.keys(nextErrors).length < 1) {
+      navigation.navigate('Home');
     }
-
-    Alert.alert('Success!', `Email: ${email} \n Password: ${password}`);
-    return null;
   };
 
   return {

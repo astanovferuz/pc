@@ -5,7 +5,7 @@ import colors from '../constants/colors';
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.primary,
+    backgroundColor: colors.green,
     paddingVertical: 14,
     borderRadius: 6,
     borderWidth: 1,
