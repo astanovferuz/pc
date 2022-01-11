@@ -16,6 +16,9 @@ export const Main = () => (
       component={FormDemo}
       options={{ 
         headerTitle: 'Property Check',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
         headerStyle: {
           backgroundColor: colors.green,
         },
@@ -37,7 +40,16 @@ export const Main = () => (
     <Drawer.Screen
       name="All Properties"
       component={TextDemo}
-      options={{ headerTitle: 'All Properties' }}
+      options={{
+        title: 'All Properties',
+        headerStyle: {
+          backgroundColor: colors.green,
+        },
+        headerTintColor: '#fff',
+        headerTitleStyle: {
+          fontWeight: 'bold',
+        },
+      }}
     />
     {/* <MainStack.Screen
       name="ButtonDemo"
