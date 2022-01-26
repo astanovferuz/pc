@@ -7,6 +7,8 @@ import { Button } from '../components/Button';
 import { TextInput } from '../components/Form';
 import { useLogin } from '../util/auth';
 
+import PropertyList from './allProperties';
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -17,9 +19,10 @@ const styles = StyleSheet.create({
 
 export const TextDemo = () => (
   <View style={styles.container}>
-    <Text type="header">This is a header</Text>
+    {/* <Text type="header">This is a header</Text>
     <Text type="subheader">This is a subheader</Text>
-    <Text>This is normal text</Text>
+    <Text>This is normal text</Text> */}
+    <PropertyList />
   </View>
 );
 
